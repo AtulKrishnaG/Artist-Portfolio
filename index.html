@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Art By Neha | Portfolio</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="#" class="logo-area">
+        <h1 class="logo">Art By Neha</h1>
+        
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Art</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="dark-btn" onclick="toggleDarkMode()">🌙</button>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+      </div>
+    </nav>
+  </header>
+
+  <section id="home" class="hero-collage">
+    <div class="pane pane-1" style="background-image: url('images/Sketch1.jpg');"></div>
+    <div class="pane pane-2" style="background-image: url('images/Paint1.JPG');"></div>
+    <div class="pane pane-3" style="background-image: url('images/Resin1.JPG');"></div>
+    <div class="hero-text">
+      <h2>Hi, I’m Neha Narwani</h2>
+      <p>ARTIST & CRAFT CREATOR</p>
+      <button class="cta-btn" onclick="scrollToSection('gallery')">Explore My Art</button>
+    </div>
+  </section>
+
+  <section id="about" class="about fade-up">
+    <div class="about-flex-container">
+      <div class="profile-header">
+        <div class="profile-container">
+          <img src="images/profile.jpg" alt="Neha Narwani" class="profile-dp">
+        </div>
+        <div class="profile-info" style="text-align: center;">
+          <div class="username-row">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram Logo"
+              class="insta-icon-small">
+            <h3>art_by_.neha</h3>
+          </div>
+          <div class="profile-stats">
+            <span><strong>6,000+</strong> followers</span>
+            <span><strong>100+</strong> artworks</span>
+          </div>
+          <a href="https://www.instagram.com/art_by_.neha" target="_blank" class="follow-btn">Follow</a>
+        </div>
+      </div>
+      <div class="about-content">
+        <h3>The Artist Behind the Brush</h3>
+        <p>Hi, I’m Neha Narwani—a Resin Artist and Handmade Décor Specialist dedicated to transforming everyday moments
+          into art. I blend fluid resin techniques with meticulous craftsmanship to create bespoke pieces that bridge
+          the gap between functionality and fine art.
+
+          My mission is to infuse your living spaces with curated elegance and personal soul. From custom-commissioned
+          statement pieces to unique everyday treasures, I invite you to explore a world where imagination takes a
+          tangible form.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="services fade-up">
+    <h2 class="section-title">My Art</h2>
+    <div class="service-box">
+      <div class="card">
+        <h3>✏️ Sketching</h3>
+        <p>Portrait sketches & pencil artwork</p>
+      </div>
+      <div class="card">
+        <h3>🎨 Painting</h3>
+        <p>Canvas, acrylic & watercolor paintings</p>
+      </div>
+      <div class="card">
+        <h3>🧊 Resin Art</h3>
+        <p>Clocks, trays & customized resin gifts</p>
+      </div>
+      <div class="card">
+        <h3>🌸 Handmade</h3>
+        <p>Flower Bouquets, Lippan Art, Jewellery</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery fade-up">
+    <h2 class="section-title">Gallery</h2>
+
+    <div id="galleryPreview" class="gallery-focus" style="display: none;">
+      <div class="focus-container">
+        <span class="close-focus" onclick="closePreview()">×</span>
+        <img id="focusImg" src="" alt="Focus View">
+        <h3 id="focusTitle"></h3>
+      </div>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="showPreview('images/Jewel1.jpg', 'Handmade Jewel')">
+        <img src="images/Jewel1.jpg" alt="Artwork" loading="lazy">
+        <div class="gallery-overlay"><span>Handmade Jewel</span></div>
+      </div>
+      <div class="gallery-item" onclick="showPreview('images/Jewel2.jpg', 'Floral Earrings')">
+        <img src="images/Jewel2.jpg" alt="Artwork" loading="lazy">
+        <div class="gallery-overlay"><span>Floral Earrings</span></div>
+      </div>
+      <div class="gallery-item" onclick="showPreview('images/Jewel3.jpg', 'Jewellery Set')">
+        <img src="images/Jewel3.jpg" alt="Artwork" loading="lazy">
+        <div class="gallery-overlay"><span>Jewellery Set</span></div>
+      </div>
+      <div class="gallery-item" onclick="showPreview('images/Jewel4.jpg', 'Handmade Necklace')">
+        <img src="images/Jewel4.jpg" alt="Artwork" loading="lazy">
+        <div class="gallery-overlay"><span>Handmade Necklace</span></div>
+      </div>
+      <div class="gallery-item" onclick="showPreview('images/Jewel5.jpg', 'Handmade Necklace')">
+        <img src="images/Jewel5.jpg" alt="Artwork" loading="lazy">
+        <div class="gallery-overlay"><span>Handmade Necklace</span></div>
+      </div>
+      <div class="gallery-item" onclick="showPreview('images/Sketch1.jpg', 'Portrait Sketch')">
+        <img src="images/Sketch1.jpg" alt="Artwork" loading="lazy">
+        <div class="gallery-overlay"><span>Portrait Sketch</span></div>
+      </div>
+      <div class="gallery-item" onclick="showPreview('images/Sketch2.jpg', 'Portrait Sketch')">
+        <img src="images/Sketch2.jpg" alt="Artwork" loading="lazy">
+        <div class="gallery-overlay"><span>Portrait Sketch</span></div>
+      </div>
+      <div class="gallery-item" onclick="showPreview('images/Sketch3.jpg', 'Portrait Sketch')">
+        <img src="images/Sketch3.jpg" alt="Artwork" loading="lazy">
+        <div class="gallery-overlay"><span>Portrait Sketch</span></div>
+      </div>
+      <div class="gallery-item" onclick="showPreview('images/Resin1.JPG', 'Custom Resin Tray')">
+        <img src="images/Resin1.JPG" alt="Artwork" loading="lazy">
+        <div class="gallery-overlay"><span>Custom Resin Tray</span></div>
+      </div>
+      <div class="gallery-item" onclick="showPreview('images/Resin2.JPG', 'Custom Resin Tray')">
+        <img src="images/Resin2.JPG" alt="Artwork" loading="lazy">
+        <div class="gallery-overlay"><span>Custom Resin Tray</span></div>
+      </div>
+      <div class="gallery-item" onclick="showPreview('images/Resin6.jpg', 'Resin Clock')">
+        <img src="images/Resin6.jpg" alt="Artwork" loading="lazy">
+        <div class="gallery-overlay"><span>Resin Clock</span></div>
+      </div>
+      <div class="gallery-item" onclick="showPreview('images/Paint1.JPG', 'Vibrant Canvas')">
+        <img src="images/Paint1.JPG" alt="Artwork" loading="lazy">
+        <div class="gallery-overlay"><span>Vibrant Canvas</span></div>
+      </div>
+      <div class="gallery-item" onclick="showPreview('images/Paint2.JPG', 'Vibrant Canvas')">
+        <img src="images/Paint2.JPG" alt="Artwork" loading="lazy">
+        <div class="gallery-overlay"><span>Vibrant Canvas</span></div>
+      </div>
+      <div class="gallery-item" onclick="showPreview('images/Paint3.JPG', 'Vibrant Canvas')">
+        <img src="images/Paint3.JPG" alt="Artwork" loading="lazy">
+        <div class="gallery-overlay"><span>Vibrant Canvas</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact fade-up">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-row">
+      <div class="contact-item">
+        <h4>Email</h4>
+        <p><a >nehanarwani2000@gmail.com</a></p>
+      </div>
+      <div class="contact-item">
+        <h4>Phone</h4>
+        <p>+91 8000645066</p>
+        <a href="https://wa.me/918000645066?text=Hi%20Neha,%20I'm%20interested%20in%20your%20art!" target="_blank"
+          class="whatsapp-btn">
+          💬 WhatsApp
+        </a>
+      </div>
+      <div class="contact-item">
+        <h4>Location</h4>
+        <p>Jaipur, India</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Neha Narwani | Artist</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
