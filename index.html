@@ -1,33 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Art By Neha | Portfolio</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
 
   <header>
     <nav class="navbar">
       <a href="#" class="logo-area">
         <h1 class="logo">Art By Neha</h1>
-        
       </a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Art</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home" onclick="scrollToSection('home')">Home</a></li>
+        <li><a href="#about" onclick="scrollToSection('about')">About</a></li>
+        <li><a href="#services" onclick="scrollToSection('services')">Art</a></li>
+        <li><a href="#gallery" onclick="scrollToSection('gallery')">Gallery</a></li>
+        <li><a href="#contact" onclick="scrollToSection('contact')">Contact</a></li>
       </ul>
       <div class="nav-right">
-        <button class="dark-btn" onclick="toggleDarkMode()">🌙</button>
+        <button class="dark-btn" onclick="toggleDarkMode()" aria-label="Toggle Dark Mode">🌙</button>
         <div class="menu-icon" onclick="toggleMenu()">☰</div>
       </div>
     </nav>
@@ -50,10 +45,9 @@
         <div class="profile-container">
           <img src="images/profile.jpg" alt="Neha Narwani" class="profile-dp">
         </div>
-        <div class="profile-info" style="text-align: center;">
+        <div class="profile-info">
           <div class="username-row">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram Logo"
-              class="insta-icon-small">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram Logo" class="insta-icon-small">
             <h3>art_by_.neha</h3>
           </div>
           <div class="profile-stats">
@@ -65,13 +59,8 @@
       </div>
       <div class="about-content">
         <h3>The Artist Behind the Brush</h3>
-        <p>Hi, I’m Neha Narwani—a Resin Artist and Handmade Décor Specialist dedicated to transforming everyday moments
-          into art. I blend fluid resin techniques with meticulous craftsmanship to create bespoke pieces that bridge
-          the gap between functionality and fine art.
-
-          My mission is to infuse your living spaces with curated elegance and personal soul. From custom-commissioned
-          statement pieces to unique everyday treasures, I invite you to explore a world where imagination takes a
-          tangible form.</p>
+        <p>Hi, I’m Neha Narwani—a Resin Artist and Handmade Décor Specialist dedicated to transforming everyday moments into art. I blend fluid resin techniques with meticulous craftsmanship to create bespoke pieces that bridge the gap between functionality and fine art.</p>
+        <p>My mission is to infuse your living spaces with curated elegance and personal soul. I invite you to explore a world where imagination takes a tangible form.</p>
       </div>
     </div>
   </section>
@@ -143,7 +132,7 @@
         <div class="gallery-overlay"><span>Portrait Sketch</span></div>
       </div>
       <div class="gallery-item" onclick="showPreview('images/Resin9.JPG', 'Custom Resin Tray')">
-        <img src="images/Resin9.jpg" alt="Artwork" loading="lazy">
+        <img src="images/Resin9.JPG" alt="Artwork" loading="lazy">
         <div class="gallery-overlay"><span>Custom Resin Tray</span></div>
       </div>
       <div class="gallery-item" onclick="showPreview('images/Resin2.JPG', 'Custom Resin Tray')">
@@ -166,7 +155,7 @@
         <img src="images/Paint3.JPG" alt="Artwork" loading="lazy">
         <div class="gallery-overlay"><span>Vibrant Canvas</span></div>
       </div>
-    </div>
+      </div>
   </section>
 
   <section id="contact" class="contact fade-up">
@@ -174,13 +163,12 @@
     <div class="contact-row">
       <div class="contact-item">
         <h4>Email</h4>
-        <p><a >nehanarwani2000@gmail.com</a></p>
+        <p><a href="mailto:nehanarwani2000@gmail.com">nehanarwani2000@gmail.com</a></p>
       </div>
       <div class="contact-item">
         <h4>Phone</h4>
         <p>+91 8000645066</p>
-        <a href="https://wa.me/918000645066?text=Hi%20Neha,%20I'm%20interested%20in%20your%20art!" target="_blank"
-          class="whatsapp-btn">
+        <a href="https://wa.me/918000645066?text=Hi%20Neha,%20I'm%20interested%20in%20your%20art!" target="_blank" class="whatsapp-btn">
           💬 WhatsApp
         </a>
       </div>
@@ -197,5 +185,4 @@
 
   <script src="js/script.js"></script>
 </body>
-
 </html>
