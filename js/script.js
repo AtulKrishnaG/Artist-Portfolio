@@ -1,13 +1,29 @@
 function toggleMenu() {
   const nav = document.getElementById("navLinks");
-  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+  nav.classList.toggle("active"); // Toggles the visibility class
 }
+
+// Close menu when a link is clicked (Mobile UX)
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById("navLinks").classList.remove("active");
+  });
+});
 
 function scrollToSection(id) {
-  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  const element = document.getElementById(id);
+  const offset = 80; // Account for fixed navbar height
+  const bodyRect = document.body.getBoundingClientRect().top;
+  const elementRect = element.getBoundingClientRect().top;
+  const elementPosition = elementRect - bodyRect;
+  const offsetPosition = elementPosition - offset;
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: 'smooth'
+  });
 }
 
-// IN-GALLERY PREVIEW FUNCTIONS
 function showPreview(src, title) {
   const previewArea = document.getElementById("galleryPreview");
   const focusImg = document.getElementById("focusImg");
@@ -15,11 +31,12 @@ function showPreview(src, title) {
 
   focusImg.src = src;
   focusTitle.innerText = title;
-
   previewArea.style.display = "block";
   
-  // Smoothly scroll to the preview panel so the user sees it
-  previewArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  // Adjusted scroll for better mobile viewing
+  const yOffset = -100; 
+  const y = previewArea.getBoundingClientRect().top + window.pageYOffset + yOffset;
+  window.scrollTo({top: y, behavior: 'smooth'});
 }
 
 function closePreview() {
@@ -28,15 +45,21 @@ function closePreview() {
 
 function toggleDarkMode() {
   document.body.classList.toggle("dark-mode");
+  const btn = document.querySelector(".dark-btn");
+  btn.innerHTML = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
 }
 
-// Scroll Animation Observer
+// Optimized Scroll Animation Observer
+const observerOptions = {
+  threshold: 0.05 // Trigger sooner on mobile
+};
+
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
     }
   });
-}, { threshold: 0.1 });
+}, observerOptions);
 
 document.querySelectorAll(".fade-up").forEach(el => observer.observe(el));
