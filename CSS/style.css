@@ -257,4 +257,48 @@ body {
   }
   .section-title { font-size: 1.8rem; }
 }
+
+/* Filter Buttons Styling */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  padding: 10px 25px;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--text-main);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover, .filter-btn.active {
+  background: var(--gold);
+  color: white;
+}
+
+/* Animation for filtering */
+.gallery-item {
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.gallery-item.hide {
+  display: none;
+}
+
+.gallery-item.show {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
 footer { padding: 40px; text-align: center; background: var(--bg-clay); color: var(--text-muted); }
