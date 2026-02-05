@@ -63,3 +63,33 @@ const observer = new IntersectionObserver(entries => {
 }, observerOptions);
 
 document.querySelectorAll(".fade-up").forEach(el => observer.observe(el));
+
+function filterGallery(category) {
+  const items = document.querySelectorAll('.gallery-item');
+  const buttons = document.querySelectorAll('.filter-btn');
+
+  // 1. Update Button States
+  buttons.forEach(btn => {
+    btn.classList.remove('active');
+    // Matches button text to the clicked category
+    if (btn.textContent.trim() === category || (category === 'all' && btn.textContent.trim() === 'All')) {
+      btn.classList.add('active');
+    }
+  });
+
+  // 2. Filter the Images
+  items.forEach(item => {
+    const itemCategory = item.getAttribute('data-category');
+    
+    if (category === 'all' || itemCategory === category) {
+      item.style.display = "block";
+      // Small timeout to allow the 'display: block' to register before animating
+      setTimeout(() => item.classList.add('show'), 10); 
+    } else {
+      item.classList.remove('show');
+      item.style.display = "none";
+    }
+  });
+
+  closePreview();
+}
