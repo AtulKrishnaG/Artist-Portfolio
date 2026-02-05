@@ -90,6 +90,14 @@
   <section id="gallery" class="gallery fade-up">
     <h2 class="section-title">Gallery</h2>
 
+    <div class="filter-container">
+    <button class="filter-btn active" onclick="filterGallery('all')">All</button>
+    <button class="filter-btn" onclick="filterGallery('Jewellery')">Jewellery</button>
+    <button class="filter-btn" onclick="filterGallery('Painting')">Painting</button>
+    <button class="filter-btn" onclick="filterGallery('Sketch')">Sketch</button>
+    <button class="filter-btn" onclick="filterGallery('Resin')">Resin</button>
+  </div>
+
     <div id="galleryPreview" class="gallery-focus" style="display: none;">
       <div class="focus-container">
         <span class="close-focus" onclick="closePreview()">×</span>
@@ -99,19 +107,19 @@
     </div>
 
     <div class="gallery-grid">
-      <div class="gallery-item" onclick="showPreview('images/Jewel1.jpg', 'Handmade Jewel')">
+      <div class="gallery-item" data-category="Jewellery" onclick="showPreview('images/Jewel1.jpg', 'Handmade Jewel')">
         <img src="images/Jewel1.jpg" alt="Artwork" loading="lazy">
         <div class="gallery-overlay"><span>Handmade Jewel</span></div>
       </div>
-      <div class="gallery-item" onclick="showPreview('images/Jewel2.jpg', 'Floral Earrings')">
+      <div class="gallery-item" data-category="Jewellery" onclick="showPreview('images/Jewel2.jpg', 'Floral Earrings')">
         <img src="images/Jewel2.jpg" alt="Artwork" loading="lazy">
         <div class="gallery-overlay"><span>Floral Earrings</span></div>
       </div>
-      <div class="gallery-item" onclick="showPreview('images/Jewel3.jpg', 'Jewellery Set')">
+      <div class="gallery-item" data-category="Jewellery" onclick="showPreview('images/Jewel3.jpg', 'Jewellery Set')">
         <img src="images/Jewel3.jpg" alt="Artwork" loading="lazy">
         <div class="gallery-overlay"><span>Jewellery Set</span></div>
       </div>
-      <div class="gallery-item" onclick="showPreview('images/Jewel4.jpg', 'Handmade Necklace')">
+      <div class="gallery-item" data-category="Jewellery" onclick="showPreview('images/Jewel4.jpg', 'Handmade Necklace')">
         <img src="images/Jewel4.jpg" alt="Artwork" loading="lazy">
         <div class="gallery-overlay"><span>Handmade Necklace</span></div>
       </div>
@@ -119,39 +127,39 @@
         <img src="images/Jewel5.jpg" alt="Artwork" loading="lazy">
         <div class="gallery-overlay"><span>Handmade Necklace</span></div>
       </div>
-      <div class="gallery-item" onclick="showPreview('images/Sketch1.jpg', 'Portrait Sketch')">
+      <div class="gallery-item" data-category="Sketch" onclick="showPreview('images/Sketch1.jpg', 'Portrait Sketch')">
         <img src="images/Sketch1.jpg" alt="Artwork" loading="lazy">
         <div class="gallery-overlay"><span>Portrait Sketch</span></div>
       </div>
-      <div class="gallery-item" onclick="showPreview('images/Sketch2.jpg', 'Portrait Sketch')">
+      <div class="gallery-item" data-category="Sketch" onclick="showPreview('images/Sketch2.jpg', 'Portrait Sketch')">
         <img src="images/Sketch2.jpg" alt="Artwork" loading="lazy">
         <div class="gallery-overlay"><span>Portrait Sketch</span></div>
       </div>
-      <div class="gallery-item" onclick="showPreview('images/Sketch3.jpg', 'Portrait Sketch')">
+      <div class="gallery-item" data-category="Sketch" onclick="showPreview('images/Sketch3.jpg', 'Portrait Sketch')">
         <img src="images/Sketch3.jpg" alt="Artwork" loading="lazy">
         <div class="gallery-overlay"><span>Portrait Sketch</span></div>
       </div>
-      <div class="gallery-item" onclick="showPreview('images/Resin9.JPG', 'Custom Resin Tray')">
+      <div class="gallery-item" data-category="Resin" onclick="showPreview('images/Resin9.JPG', 'Custom Resin Tray')">
         <img src="images/Resin9.JPG" alt="Artwork" loading="lazy">
         <div class="gallery-overlay"><span>Custom Resin Tray</span></div>
       </div>
-      <div class="gallery-item" onclick="showPreview('images/Resin2.JPG', 'Custom Resin Tray')">
+      <div class="gallery-item" data-category="Resin" onclick="showPreview('images/Resin2.JPG', 'Custom Resin Tray')">
         <img src="images/Resin2.JPG" alt="Artwork" loading="lazy">
         <div class="gallery-overlay"><span>Custom Resin Tray</span></div>
       </div>
-      <div class="gallery-item" onclick="showPreview('images/Resin6.jpg', 'Resin Clock')">
+      <div class="gallery-item" data-category="Resin" onclick="showPreview('images/Resin6.jpg', 'Resin Clock')">
         <img src="images/Resin6.jpg" alt="Artwork" loading="lazy">
         <div class="gallery-overlay"><span>Resin Clock</span></div>
       </div>
-      <div class="gallery-item" onclick="showPreview('images/Paint1.JPG', 'Vibrant Canvas')">
+      <div class="gallery-item" data-category="Painting" onclick="showPreview('images/Paint1.JPG', 'Vibrant Canvas')">
         <img src="images/Paint1.JPG" alt="Artwork" loading="lazy">
         <div class="gallery-overlay"><span>Vibrant Canvas</span></div>
       </div>
-      <div class="gallery-item" onclick="showPreview('images/Paint2.JPG', 'Vibrant Canvas')">
+      <div class="gallery-item" data-category="Painting" onclick="showPreview('images/Paint2.JPG', 'Vibrant Canvas')">
         <img src="images/Paint2.JPG" alt="Artwork" loading="lazy">
         <div class="gallery-overlay"><span>Vibrant Canvas</span></div>
       </div>
-      <div class="gallery-item" onclick="showPreview('images/Paint3.JPG', 'Vibrant Canvas')">
+      <div class="gallery-item" data-category="Painting" onclick="showPreview('images/Paint3.JPG', 'Vibrant Canvas')">
         <img src="images/Paint3.JPG" alt="Artwork" loading="lazy">
         <div class="gallery-overlay"><span>Vibrant Canvas</span></div>
       </div>
