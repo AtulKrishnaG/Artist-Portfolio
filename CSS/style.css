@@ -301,4 +301,51 @@ body {
   from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
 }
+/* ART IN MOTION STYLES */
+.process-section {
+  padding: 80px 10%;
+  background: var(--bg-sand); /* Light contrast background */
+}
+
+.video-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.video-card {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-10px);
+}
+
+.video-card video {
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+  object-fit: cover;
+  aspect-ratio: 9 / 16; /* Portrait Reel format */
+}
+
+/* Responsive adjustment for Mobile */
+@media (max-width: 768px) {
+  .video-container {
+    grid-template-columns: 1fr; /* Stack vertically on small screens */
+    gap: 30px;
+  }
+  
+  .video-card {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
 footer { padding: 40px; text-align: center; background: var(--bg-clay); color: var(--text-muted); }
