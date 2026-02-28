@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Art By Neha | Portfolio</title>
+  <title>Art By Neha </title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -66,62 +66,73 @@
   </section>
 
   <section id="hampers" class="hampers-section fade-up">
-  <h2 class="section-title">Gift Hampers</h2>
-  <p class="section-subtitle">Curated collections for your special occasions</p>
+    <div id="hamperPreview" class="gallery-focus" style="display: none; margin-bottom: 40px;">
+      <div class="focus-container">
+        <span class="close-focus" onclick="closeHamperPreview()">×</span>
+        <img id="hamperFocusImg" src="" alt="Hamper Preview">
+        <h3 id="hamperFocusTitle"></h3>
+        <a id="hamperInquiryBtn" href="#" target="_blank" class="whatsapp-btn" style="margin-top: 20px; display: inline-block;">
+      💬 Inquiry for this Hamper
+    </a>
+      </div>
+    </div>
 
-  <div class="hamper-slider-container">
-    <div class="hamper-slider">
-      <div class="hamper-card" onclick="showPreview('images/Hamper1.jpg', 'Signature Resin Hamper')">
-        <img src="images/Hamper1.jpg" alt="Gift Hamper 1">
-        <div class="hamper-info">
-          <h4>The Celebration Box</h4>
+    <h2 class="section-title">Gift Hampers</h2>
+    <p class="section-subtitle">Curated collections for your special occasions</p>
+
+    <div class="hamper-slider-container">
+      <div class="hamper-slider">
+        <div class="hamper-card" onclick="showHamperPreview('images/Hamper1.jpg', 'The Celebration Box')">
+          <img src="images/Hamper1.jpg" alt="Gift Hamper 1">
+          <div class="hamper-info">
+            <h4>The Celebration Box</h4>
+          </div>
         </div>
-      </div>
-      <div class="hamper-card" onclick="showPreview('images/Hamper2.jpg', 'Floral Celebration Box')">
-        <img src="images/Hamper2.jpg" alt="Gift Hamper 2">
-        <div class="hamper-info">
-          <h4>Turquoise Delight</h4>
+        <div class="hamper-card" onclick="showHamperPreview('images/Hamper2.jpg', 'Turquoise Delight')">
+          <img src="images/Hamper2.jpg" alt="Gift Hamper 2">
+          <div class="hamper-info">
+            <h4>Turquoise Delight</h4>
+          </div>
         </div>
-      </div>
-      <div class="hamper-card" onclick="showPreview('images/Hamper3.jpg', 'Bespoke Art Hamper')">
-        <img src="images/Hamper3.jpg" alt="Gift Hamper 3">
-        <div class="hamper-info">
-          <h4>Rosy Chocolate Garden</h4>
+        <div class="hamper-card" onclick="showHamperPreview('images/Hamper3.jpg', 'Rosy Chocolate Garden')">
+          <img src="images/Hamper3.jpg" alt="Gift Hamper 3">
+          <div class="hamper-info">
+            <h4>Rosy Chocolate Garden</h4>
+          </div>
         </div>
-      </div>
-      <div class="hamper-card" onclick="showPreview('images/Hamper4.jpg', 'Luxe Decor Collection')">
-        <img src="images/Hamper4.jpg" alt="Gift Hamper 4">
-        <div class="hamper-info">
-          <h4>Whimsical Floral Basket</h4>
+        <div class="hamper-card" onclick="showHamperPreview('images/Hamper4.jpg', 'Whimsical Floral Basket')">
+          <img src="images/Hamper4.jpg" alt="Gift Hamper 4">
+          <div class="hamper-info">
+            <h4>Whimsical Floral Basket</h4>
+          </div>
         </div>
-      </div>
-      <div class="hamper-card" onclick="showPreview('images/Hamper3.jpg', 'Bespoke Art Hamper')">
-        <img src="images/Hamper5.jpg" alt="Gift Hamper 5">
-        <div class="hamper-info">
-          <h4>The Luxe Surprise</h4>
+        <div class="hamper-card" onclick="showHamperPreview('images/Hamper5.jpg', 'The Luxe Surprise')">
+          <img src="images/Hamper5.jpg" alt="Gift Hamper 5">
+          <div class="hamper-info">
+            <h4>The Luxe Surprise</h4>
+          </div>
         </div>
-      </div>
-      <div class="hamper-card" onclick="showPreview('images/Hamper3.jpg', 'Bespoke Art Hamper')">
-        <img src="images/Hamper6.jpg" alt="Gift Hamper 6">
-        <div class="hamper-info">
-          <h4>Golden Rope Treat</h4>
+        <div class="hamper-card" onclick="showHamperPreview('images/Hamper6.jpg', 'Golden Rope Treat')">
+          <img src="images/Hamper6.jpg" alt="Gift Hamper 6">
+          <div class="hamper-info">
+            <h4>Golden Rope Treat</h4>
+          </div>
         </div>
-      </div>
-      <div class="hamper-card" onclick="showPreview('images/Hamper3.jpg', 'Bespoke Art Hamper')">
-        <img src="images/Hamper7.jpg" alt="Gift Hamper 7">
-        <div class="hamper-info">
-          <h4>Double Heart Floral</h4>
+        <div class="hamper-card" onclick="showHamperPreview('images/Hamper7.jpg', 'Double Heart Floral')">
+          <img src="images/Hamper7.jpg" alt="Gift Hamper 7">
+          <div class="hamper-info">
+            <h4>Double Heart Floral</h4>
+          </div>
         </div>
-      </div>
-      <div class="hamper-card"onclick="showPreview('images/Hamper3.jpg', 'Bespoke Art Hamper')">
-        <img src="images/Hamper8.jpg" alt="Gift Hamper 8">
-        <div class="hamper-info">
-          <h4>The Skincare & Silk Set</h4>
+        <div class="hamper-card" onclick="showHamperPreview('images/Hamper8.jpg', 'The Skincare & Silk Set')">
+          <img src="images/Hamper8.jpg" alt="Gift Hamper 8">
+          <div class="hamper-info">
+            <h4>The Skincare & Silk Set</h4>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <section id="services" class="services fade-up">
     <h2 class="section-title">My Art</h2>
@@ -146,42 +157,42 @@
   </section>
 
   <section id="process" class="process-section fade-up">
-  <h2 class="section-title">Art In Motion</h2>
-  <div class="video-container">
-    <div class="video-card">
-      <a href="https://www.instagram.com/reel/DSR8UD7kuF-/?igsh=ZWp4YXYxa3prbXN6" target="_blank">
-        <video autoplay muted loop playsinline>
-          <source src="images/Video 2.mp4" type="video/mp4">
-        </video>
-      </a>
+    <h2 class="section-title">Art In Motion</h2>
+    <div class="video-container">
+      <div class="video-card">
+        <a href="https://www.instagram.com/reel/DSR8UD7kuF-/" target="_blank">
+          <video autoplay muted loop playsinline>
+            <source src="images/Video 2.mp4" type="video/mp4">
+          </video>
+        </a>
+      </div>
+      <div class="video-card">
+        <a href="https://www.instagram.com/reel/DSKKeZOki8k/" target="_blank">
+          <video autoplay muted loop playsinline>
+            <source src="images/Video 1.mp4" type="video/mp4">
+          </video>
+        </a>
+      </div>
+      <div class="video-card">
+        <a href="https://www.instagram.com/reel/C11JLYlv7Kh/" target="_blank">
+          <video autoplay muted loop playsinline>
+            <source src="images/Video 3.mp4" type="video/mp4">
+          </video>
+        </a>
+      </div>
     </div>
-    <div class="video-card">
-      <a href="https://www.instagram.com/reel/DSKKeZOki8k/?igsh=NmlvMXh1MzY1OW0x" target="_blank">
-        <video autoplay muted loop playsinline>
-          <source src="images/Video 1.mp4" type="video/mp4">
-        </video>
-      </a>
-    </div>
-    <div class="video-card">
-      <a href="https://www.instagram.com/reel/C11JLYlv7Kh/?igsh=MTBvZ3hsdDlyY2Flcg==" target="_blank">
-        <video autoplay muted loop playsinline>
-          <source src="images/Video 3.mp4" type="video/mp4">
-        </video>
-      </a>
-    </div>
-  </div>
-</section>
+  </section>
 
   <section id="gallery" class="gallery fade-up">
     <h2 class="section-title">Gallery</h2>
 
     <div class="filter-container">
-    <button class="filter-btn active" onclick="filterGallery('all')">All</button>
-    <button class="filter-btn" onclick="filterGallery('Jewellery')">Jewellery</button>
-    <button class="filter-btn" onclick="filterGallery('Painting')">Painting</button>
-    <button class="filter-btn" onclick="filterGallery('Sketch')">Sketch</button>
-    <button class="filter-btn" onclick="filterGallery('Resin')">Resin</button>
-  </div>
+      <button class="filter-btn active" onclick="filterGallery('all')">All</button>
+      <button class="filter-btn" onclick="filterGallery('Jewellery')">Jewellery</button>
+      <button class="filter-btn" onclick="filterGallery('Painting')">Painting</button>
+      <button class="filter-btn" onclick="filterGallery('Sketch')">Sketch</button>
+      <button class="filter-btn" onclick="filterGallery('Resin')">Resin</button>
+    </div>
 
     <div id="galleryPreview" class="gallery-focus" style="display: none;">
       <div class="focus-container">
@@ -208,7 +219,7 @@
         <img src="images/Jewel4.jpg" alt="Artwork" loading="lazy">
         <div class="gallery-overlay"><span>Handmade Necklace</span></div>
       </div>
-      <div class="gallery-item" onclick="showPreview('images/Jewel5.jpg', 'Handmade Necklace')">
+      <div class="gallery-item" data-category="Jewellery" onclick="showPreview('images/Jewel5.jpg', 'Handmade Necklace')">
         <img src="images/Jewel5.jpg" alt="Artwork" loading="lazy">
         <div class="gallery-overlay"><span>Handmade Necklace</span></div>
       </div>
@@ -248,7 +259,7 @@
         <img src="images/Paint3.JPG" alt="Artwork" loading="lazy">
         <div class="gallery-overlay"><span>Vibrant Canvas</span></div>
       </div>
-      </div>
+    </div>
   </section>
 
   <section id="contact" class="contact fade-up">
