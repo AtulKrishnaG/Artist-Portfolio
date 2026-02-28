@@ -90,11 +90,11 @@ section { padding: 100px 10%; }
 .follow-btn:hover { background: var(--gold); }
 .about-content { flex: 1.5; padding-left: 50px; border-left: 2px solid var(--gold); }
 
-/* 7. GALLERY PREVIEW */
-.gallery-focus { width: 100%; margin-bottom: 40px; background: var(--bg-sand); padding: 30px; border-radius: 12px; border: 1px solid var(--gold); animation: slideDown 0.5s ease; }
+/* 7. GALLERY & HAMPER PREVIEW */
+.gallery-focus { width: 100%; background: var(--bg-sand); padding: 30px; border-radius: 12px; border: 1px solid var(--gold); animation: slideDown 0.5s ease; }
 .focus-container { position: relative; text-align: center; max-width: 600px; margin: 0 auto; }
-#focusImg { max-width: 100%; max-height: 450px; border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
-#focusTitle { margin-top: 20px; color: var(--gold); font-size: 1.8rem; }
+#focusImg, #hamperFocusImg { max-width: 100%; max-height: 450px; border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); object-fit: contain; }
+#focusTitle, #hamperFocusTitle { margin-top: 20px; color: var(--gold); font-size: 1.8rem; }
 .close-focus { position: absolute; top: -15px; right: -25px; font-size: 35px; cursor: pointer; color: var(--text-muted); }
 
 /* 8. GALLERY GRID */
@@ -114,7 +114,27 @@ section { padding: 100px 10%; }
 .contact-row { display: flex; justify-content: space-around; text-align: center; max-width: 1000px; margin: 0 auto; gap: 20px; }
 .whatsapp-btn { display: inline-block; margin-top: 15px; padding: 10px 20px; background-color: #25D366; color: white !important; border-radius: 4px; font-weight: 600; text-decoration: none; }
 
-/* 10. ANIMATIONS & RESPONSIVENESS */
+/* 10. ART IN MOTION */
+.process-section { padding: 80px 10%; background: var(--bg-sand); }
+.video-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto; }
+.video-card { position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+.video-card:hover { transform: translateY(-10px); }
+.video-card video { width: 100%; display: block; border-radius: 20px; object-fit: cover; aspect-ratio: 9 / 16; }
+
+/* 11. HAMPERS */
+.hampers-section { background: var(--bg-clay); padding: 80px 5%; }
+.section-subtitle { text-align: center; margin-top: -40px; margin-bottom: 40px; color: var(--text-muted); font-style: italic; }
+.hamper-slider-container { width: 100%; overflow-x: auto; padding-bottom: 20px; cursor: grab; }
+.hamper-slider-container::-webkit-scrollbar { height: 6px; }
+.hamper-slider-container::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
+.hamper-slider { display: flex; gap: 25px; width: max-content; padding: 10px; }
+.hamper-card { width: 300px; background: var(--card-light); border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: transform 0.3s ease; cursor: pointer; border: 1px solid rgba(196, 154, 108, 0.1); }
+.hamper-card:hover { transform: translateY(-8px); border-color: var(--gold); }
+.hamper-card img { width: 100%; height: 350px; object-fit: cover; }
+.hamper-info { padding: 15px; text-align: center; }
+.hamper-info h4 { font-family: 'Poppins', sans-serif; font-size: 1rem; color: var(--text-main); letter-spacing: 1px; }
+
+/* 12. RESPONSIVENESS */
 .fade-up { opacity: 0; transform: translateY(30px); transition: 0.8s ease; }
 .fade-up.show { opacity: 1; transform: translateY(0); }
 
@@ -122,312 +142,35 @@ section { padding: 100px 10%; }
 
 @media (max-width: 850px) {
   .navbar { padding: 15px 20px; }
-  .menu-icon {
-    display: block;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--gold);
-  }
+  .menu-icon { display: block; }
   .nav-links {
-    display: none; /* Hidden by default */
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: var(--bg-paper);
-    padding: 20px;
-    border-bottom: 2px solid var(--gold);
-    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-    text-align: center;
-    gap: 20px;
+    display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%;
+    background: var(--bg-paper); padding: 20px; border-bottom: 2px solid var(--gold); text-align: center; gap: 20px;
   }
-  
   .nav-links.active { display: flex; }
-  .hero-collage {
-  display: flex;
-  width: 100%;
-  height: 90vh;
-  background: #111;
-  overflow: hidden;
-  position: relative;
-}
-  
-  .pane { height: 300px; clip-path: none !important; margin-left: 0 !important; }
-  .hero-text h2 { font-size: 2.2rem; }
+  .hero-collage { height: 100vh; flex-direction: column; }
+  .pane { height: 33vh; clip-path: none !important; margin-left: 0 !important; }
+  .hero-text h2 { font-size: 2.2rem !important; }
   .about-flex-container { flex-direction: column; text-align: center; }
   .about-content { border-left: none; border-top: 2px solid var(--gold); padding: 30px 0 0; }
-  .contact-row { flex-direction: column; gap: 40px; }
-  section { padding: 60px 5%; }
-}
-/* --- RESPONSIVE FIXES & ENHANCEMENTS --- */
-
-/* Updated Navbar for Mobile */
-@media (max-width: 850px) {
-  .nav-links {
-    display: none; /* Hidden by default */
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: var(--bg-paper);
-    padding: 20px;
-    border-bottom: 2px solid var(--gold);
-    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-    text-align: center;
-    gap: 20px;
-  }
-
-  .nav-links.active {
-    display: flex; /* Show when active class is added */
-  }
-
-  .menu-icon {
-    display: block;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--gold);
-  }
-}
-
-/* Responsive Hero Collage */
-.hero-collage {
-  display: flex;
-  width: 100%;
-  height: 90vh;
-  background: #111;
-  overflow: hidden;
-  position: relative;
-}
-
-@media (max-width: 768px) {
-  .hero-collage {
-    flex-direction: column; /* Stack images vertically on mobile */
-    height: 100vh;
-  }
-  
-  .pane {
-    clip-path: none !important; /* Remove angles on mobile */
-    margin-left: 0 !important;
-    flex: 1 !important;
-  }
-
-  .hero-text h2 {
-    font-size: 2rem !important;
-  }
-}
-
-/* Gallery Focus Area Responsiveness */
-.focus-container {
-  padding: 0 10px;
-}
-
-#focusImg {
-  width: 100%;
-  height: auto; /* Maintains aspect ratio */
-  max-height: 70vh;
-  object-fit: contain;
-}
-
-/* Profile Stats Responsiveness */
-.profile-stats {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  font-size: 0.9rem;
-}
-
-/* Tablet and Small Desktop Optimization */
-@media (min-width: 851px) and (max-width: 1200px) {
-  section { padding: 80px 5%; }
-  .hero-text h2 { font-size: 3rem; }
-}
-
-/* Fix for horizontal overflow on small devices */
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-/* Image scaling for very small phones */
-@media (max-width: 400px) {
-  .gallery-grid {
-    grid-template-columns: 1fr; /* Single column for tiny screens */
-  }
-  .section-title { font-size: 1.8rem; }
-}
-
-/* Filter Buttons Styling */
-.filter-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-bottom: 40px;
-}
-
-.filter-btn {
-  padding: 10px 25px;
-  border: 1px solid var(--gold);
-  background: transparent;
-  color: var(--text-main);
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  cursor: pointer;
-  border-radius: 30px;
-  transition: all 0.3s ease;
-}
-
-.filter-btn:hover, .filter-btn.active {
-  background: var(--gold);
-  color: white;
-}
-
-/* Animation for filtering */
-.gallery-item {
-  transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-.gallery-item.hide {
-  display: none;
-}
-
-.gallery-item.show {
-  animation: fadeIn 0.5s ease forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
-}
-/* ART IN MOTION STYLES */
-.process-section {
-  padding: 80px 10%;
-  background: var(--bg-sand); /* Light contrast background */
-}
-
-.video-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.video-card {
-  position: relative;
-  width: 100%;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.video-card:hover {
-  transform: translateY(-10px);
-}
-
-.video-card video {
-  width: 100%;
-  display: block;
-  border-radius: 20px;
-  object-fit: cover;
-  aspect-ratio: 9 / 16; /* Portrait Reel format */
-}
-
-/* Responsive adjustment for Mobile */
-@media (max-width: 768px) {
-  .video-container {
-    grid-template-columns: 1fr; /* Stack vertically on small screens */
-    gap: 30px;
-  }
-  
-  .video-card {
-    max-width: 320px;
-    margin: 0 auto;
-  }
-}
-
-/* HAMPER SECTION STYLES */
-.hampers-section {
-  background: var(--bg-clay); /* Slight contrast from About section */
-  padding: 80px 5%;
-}
-
-.section-subtitle {
-  text-align: center;
-  margin-top: -40px;
-  margin-bottom: 40px;
-  color: var(--text-muted);
-  font-style: italic;
-}
-
-.hamper-slider-container {
-  width: 100%;
-  overflow-x: auto; /* Enables horizontal scrolling */
-  padding-bottom: 20px;
-  cursor: grab;
-}
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-.hamper-slider-container::-webkit-scrollbar {
-  height: 6px;
-}
-.hamper-slider-container::-webkit-scrollbar-thumb {
-  background: var(--gold);
-  border-radius: 10px;
-}
-
-.hamper-slider {
-  display: flex;
-  gap: 25px;
-  width: max-content; /* Ensures the flex items stay in a row */
-  padding: 10px;
-}
-
-.hamper-card {
-  width: 300px;
-  background: var(--card-light);
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-  border: 1px solid rgba(196, 154, 108, 0.1);
-}
-
-.hamper-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--gold);
-}
-
-.hamper-card img {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-}
-
-.hamper-info {
-  padding: 15px;
-  text-align: center;
-}
-
-.hamper-info h4 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  color: var(--text-main);
-  letter-spacing: 1px;
-}
-
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-  .hamper-card {
-    width: 260px;
-  }
-  .hamper-card img {
-    height: 300px;
-  }
+  .video-container { grid-template-columns: 1fr; }
+  .video-card { max-width: 320px; margin: 0 auto; }
 }
 
 footer { padding: 40px; text-align: center; background: var(--bg-clay); color: var(--text-muted); }
+
+/* Filter Buttons Styling */
+.filter-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-bottom: 40px; }
+.filter-btn { padding: 10px 25px; border: 1px solid var(--gold); background: transparent; color: var(--text-main); font-weight: 500; cursor: pointer; border-radius: 30px; transition: 0.3s; }
+.filter-btn:hover, .filter-btn.active { background: var(--gold); color: white; }
+
+#hamperInquiryBtn {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  padding: 12px 30px;
+  font-size: 1rem;
+}
+
+#hamperInquiryBtn:hover {
+  transform: scale(1.05);
+  background-color: #1ebe57; /* Slightly darker WhatsApp green */
+}
