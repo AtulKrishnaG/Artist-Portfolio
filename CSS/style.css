@@ -429,5 +429,5 @@ body {
     height: 300px;
   }
 }
-footer { padding: 40px; text-align: center; background: var(--bg-clay); color: var(--text-muted); }
 
+footer { padding: 40px; text-align: center; background: var(--bg-clay); color: var(--text-muted); }
