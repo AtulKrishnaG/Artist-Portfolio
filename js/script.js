@@ -1,9 +1,9 @@
 function toggleMenu() {
   const nav = document.getElementById("navLinks");
-  nav.classList.toggle("active"); // Toggles the visibility class
+  nav.classList.toggle("active");
 }
 
-// Close menu when a link is clicked (Mobile UX)
+// Close menu when a link is clicked
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
     document.getElementById("navLinks").classList.remove("active");
@@ -12,7 +12,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 
 function scrollToSection(id) {
   const element = document.getElementById(id);
-  const offset = 80; // Account for fixed navbar height
+  const offset = 80;
   const bodyRect = document.body.getBoundingClientRect().top;
   const elementRect = element.getBoundingClientRect().top;
   const elementPosition = elementRect - bodyRect;
@@ -24,6 +24,7 @@ function scrollToSection(id) {
   });
 }
 
+/** 1. GALLERY PREVIEW LOGIC **/
 function showPreview(src, title) {
   const previewArea = document.getElementById("galleryPreview");
   const focusImg = document.getElementById("focusImg");
@@ -33,7 +34,6 @@ function showPreview(src, title) {
   focusTitle.innerText = title;
   previewArea.style.display = "block";
   
-  // Adjusted scroll for better mobile viewing
   const yOffset = -100; 
   const y = previewArea.getBoundingClientRect().top + window.pageYOffset + yOffset;
   window.scrollTo({top: y, behavior: 'smooth'});
@@ -43,47 +43,67 @@ function closePreview() {
   document.getElementById("galleryPreview").style.display = "none";
 }
 
+/** 2. HAMPER PREVIEW LOGIC **/
+function showHamperPreview(src, title) {
+  const previewArea = document.getElementById("hamperPreview");
+  const focusImg = document.getElementById("hamperFocusImg");
+  const focusTitle = document.getElementById("hamperFocusTitle");
+  const inquiryBtn = document.getElementById("hamperInquiryBtn");
+
+  // Update Image and Title
+  focusImg.src = src;
+  focusTitle.innerText = title;
+  
+  // Update WhatsApp Link dynamically
+  const phoneNumber = "918000645066";
+  const message = encodeURIComponent(`Hi Neha, I'm interested in the "${title}" gift hamper. Could you share more details?`);
+  inquiryBtn.href = `https://wa.me/${phoneNumber}?text=${message}`;
+
+  previewArea.style.display = "block";
+  
+  const yOffset = -120; 
+  const y = previewArea.getBoundingClientRect().top + window.pageYOffset + yOffset;
+  window.scrollTo({top: y, behavior: 'smooth'});
+}
+
+function closeHamperPreview() {
+  document.getElementById("hamperPreview").style.display = "none";
+}
+
+/** THEME & UTILITIES **/
 function toggleDarkMode() {
   document.body.classList.toggle("dark-mode");
   const btn = document.querySelector(".dark-btn");
   btn.innerHTML = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
 }
 
-// Optimized Scroll Animation Observer
-const observerOptions = {
-  threshold: 0.05 // Trigger sooner on mobile
-};
-
+// Intersection Observer for animations
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
     }
   });
-}, observerOptions);
+}, { threshold: 0.1 });
 
 document.querySelectorAll(".fade-up").forEach(el => observer.observe(el));
 
+/** FILTER GALLERY LOGIC **/
 function filterGallery(category) {
   const items = document.querySelectorAll('.gallery-item');
   const buttons = document.querySelectorAll('.filter-btn');
 
-  // 1. Update Button States
   buttons.forEach(btn => {
     btn.classList.remove('active');
-    // Matches button text to the clicked category
     if (btn.textContent.trim() === category || (category === 'all' && btn.textContent.trim() === 'All')) {
       btn.classList.add('active');
     }
   });
 
-  // 2. Filter the Images
   items.forEach(item => {
     const itemCategory = item.getAttribute('data-category');
-    
     if (category === 'all' || itemCategory === category) {
       item.style.display = "block";
-      // Small timeout to allow the 'display: block' to register before animating
       setTimeout(() => item.classList.add('show'), 10); 
     } else {
       item.classList.remove('show');
@@ -92,4 +112,6 @@ function filterGallery(category) {
   });
 
   closePreview();
+
+  
 }
