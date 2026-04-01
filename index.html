@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Art By Neha </title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 
   <header>
@@ -16,8 +20,8 @@
       </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#home" onclick="scrollToSection('home')">Home</a></li>
-        <li><a href="#about" onclick="scrollToSection('about')">About</a></li>
-        <li><a href="#services" onclick="scrollToSection('services')">Art</a></li>
+        <li><a href="#about-services" onclick="scrollToSection('about')">About</a></li>
+        <li><a href="#hampers" onclick="scrollToSection('hamper')">Hampers</a></li>
         <li><a href="#gallery" onclick="scrollToSection('gallery')">Gallery</a></li>
         <li><a href="#contact" onclick="scrollToSection('contact')">Contact</a></li>
       </ul>
@@ -28,40 +32,84 @@
     </nav>
   </header>
 
-  <section id="home" class="hero-collage">
-    <div class="pane pane-1" style="background-image: url('images/Sketch1.jpg');"></div>
-    <div class="pane pane-2" style="background-image: url('images/Paint1.JPG');"></div>
-    <div class="pane pane-3" style="background-image: url('images/Resin1.JPG');"></div>
-    <div class="hero-text">
-      <h2>Hi, I’m Neha Narwani</h2>
-      <p>ARTIST & CRAFT CREATOR</p>
-      <button class="cta-btn" onclick="scrollToSection('gallery')">Explore My Art</button>
+  <section id="home" class="hero-split fade-up">
+    <div class="hero-left">
+      <div class="hero-content">
+        <p class="hero-subtitle">The Artist Behind the Brush</p>
+        <h2>Hi, I’m <br><span class="highlight">Neha Narwani</span></h2>
+        <p class="hero-description">A Resin Artist and Handmade Décor Specialist dedicated to transforming everyday
+          moments into art. I blend fluid resin techniques with meticulous craftsmanship to create bespoke pieces that
+          bridge the gap between functionality and fine art.</p>
+        <p class="hero-description">My mission is to infuse your living spaces with curated elegance and personal soul.
+          I invite you to explore a world where imagination takes a tangible form.</p>
+        <button class="cta-btn" onclick="scrollToSection('gallery')">Explore My Art</button>
+
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-images-grid featured-layout">
+        <div class="hero-image-card card-side-left">
+          <img src="images/Paint3.JPG" alt="Resin Art">
+        </div>
+
+        <div class="hero-image-card card-featured-center">
+          <img src="images/Jewel3.jpg" alt="Featured Jewellery Set">
+        </div>
+
+        <div class="hero-image-card card-side-right">
+          <img src="images/Hamper8.jpg" alt="Gift Hamper">
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="about" class="about fade-up">
-    <div class="about-flex-container">
-      <div class="profile-header">
-        <div class="profile-container">
-          <img src="images/profile.jpg" alt="Neha Narwani" class="profile-dp">
-        </div>
-        <div class="profile-info">
-          <div class="username-row">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram Logo" class="insta-icon-small">
-            <h3>art_by_.neha</h3>
+
+
+  <section id="about-services" class="about-services-split fade-up">
+    <div class="split-container">
+
+      <div class="profile-sidebar">
+        <div class="profile-card">
+          <div class="profile-image-wrapper">
+            <img src="images/profile.jpg" alt="Neha Narwani" class="profile-dp">
           </div>
-          <div class="profile-stats">
-            <span><strong>6,000+</strong> followers</span>
-            <span><strong>100+</strong> artworks</span>
+          <div class="profile-info">
+            <div class="username-row">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram"
+                class="insta-icon-small">
+              <h3>art_by_.neha</h3>
+            </div>
+            <div class="profile-stats">
+              <span><strong>6,000+</strong> followers</span>
+              <span><strong>100+</strong> artworks</span>
+            </div>
+            <a href="https://www.instagram.com/art_by_.neha" target="_blank" class="follow-btn">Follow</a>
           </div>
-          <a href="https://www.instagram.com/art_by_.neha" target="_blank" class="follow-btn">Follow</a>
         </div>
       </div>
-      <div class="about-content">
-        <h3>The Artist Behind the Brush</h3>
-        <p>Hi, I’m Neha Narwani—a Resin Artist and Handmade Décor Specialist dedicated to transforming everyday moments into art. I blend fluid resin techniques with meticulous craftsmanship to create bespoke pieces that bridge the gap between functionality and fine art.</p>
-        <p>My mission is to infuse your living spaces with curated elegance and personal soul. I invite you to explore a world where imagination takes a tangible form.</p>
+
+      <div class="services-content">
+        <h2 class="section-title left-align">My Art</h2>
+        <div class="service-grid">
+          <div class="card">
+            <h3>✏️ Sketching</h3>
+            <p>Portrait sketches & pencil artwork</p>
+          </div>
+          <div class="card">
+            <h3>🎨 Painting</h3>
+            <p>Canvas, acrylic & watercolor paintings</p>
+          </div>
+          <div class="card">
+            <h3>🧊 Resin Art</h3>
+            <p>Clocks, trays & customized resin gifts</p>
+          </div>
+          <div class="card">
+            <h3>🌸 Handmade</h3>
+            <p>Flower Bouquets, Lippan Art, Jewellery</p>
+          </div>
+        </div>
       </div>
+
     </div>
   </section>
 
@@ -71,9 +119,10 @@
         <span class="close-focus" onclick="closeHamperPreview()">×</span>
         <img id="hamperFocusImg" src="" alt="Hamper Preview">
         <h3 id="hamperFocusTitle"></h3>
-        <a id="hamperInquiryBtn" href="#" target="_blank" class="whatsapp-btn" style="margin-top: 20px; display: inline-block;">
-      💬 Inquiry for this Hamper
-    </a>
+        <a id="hamperInquiryBtn" href="#" target="_blank" class="whatsapp-btn"
+          style="margin-top: 20px; display: inline-block;">
+          💬 Inquiry for this Hamper
+        </a>
       </div>
     </div>
 
@@ -134,27 +183,7 @@
     </div>
   </section>
 
-  <section id="services" class="services fade-up">
-    <h2 class="section-title">My Art</h2>
-    <div class="service-box">
-      <div class="card">
-        <h3>✏️ Sketching</h3>
-        <p>Portrait sketches & pencil artwork</p>
-      </div>
-      <div class="card">
-        <h3>🎨 Painting</h3>
-        <p>Canvas, acrylic & watercolor paintings</p>
-      </div>
-      <div class="card">
-        <h3>🧊 Resin Art</h3>
-        <p>Clocks, trays & customized resin gifts</p>
-      </div>
-      <div class="card">
-        <h3>🌸 Handmade</h3>
-        <p>Flower Bouquets, Lippan Art, Jewellery</p>
-      </div>
-    </div>
-  </section>
+
 
   <section id="process" class="process-section fade-up">
     <h2 class="section-title">Art In Motion</h2>
@@ -215,11 +244,13 @@
         <img src="images/Jewel3.jpg" alt="Artwork" loading="lazy">
         <div class="gallery-overlay"><span>Jewellery Set</span></div>
       </div>
-      <div class="gallery-item" data-category="Jewellery" onclick="showPreview('images/Jewel4.jpg', 'Handmade Necklace')">
+      <div class="gallery-item" data-category="Jewellery"
+        onclick="showPreview('images/Jewel4.jpg', 'Handmade Necklace')">
         <img src="images/Jewel4.jpg" alt="Artwork" loading="lazy">
         <div class="gallery-overlay"><span>Handmade Necklace</span></div>
       </div>
-      <div class="gallery-item" data-category="Jewellery" onclick="showPreview('images/Jewel5.jpg', 'Handmade Necklace')">
+      <div class="gallery-item" data-category="Jewellery"
+        onclick="showPreview('images/Jewel5.jpg', 'Handmade Necklace')">
         <img src="images/Jewel5.jpg" alt="Artwork" loading="lazy">
         <div class="gallery-overlay"><span>Handmade Necklace</span></div>
       </div>
@@ -272,7 +303,8 @@
       <div class="contact-item">
         <h4>Phone</h4>
         <p>+91 8000645066</p>
-        <a href="https://wa.me/918000645066?text=Hi%20Neha,%20I'm%20interested%20in%20your%20art!" target="_blank" class="whatsapp-btn">
+        <a href="https://wa.me/918000645066?text=Hi%20Neha,%20I'm%20interested%20in%20your%20art!" target="_blank"
+          class="whatsapp-btn">
           💬 WhatsApp
         </a>
       </div>
@@ -289,4 +321,5 @@
 
   <script src="js/script.js"></script>
 </body>
+
 </html>
