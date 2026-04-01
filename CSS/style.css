@@ -174,3 +174,341 @@ footer { padding: 40px; text-align: center; background: var(--bg-clay); color: v
   transform: scale(1.05);
   background-color: #1ebe57; /* Slightly darker WhatsApp green */
 }
+
+/* --- NEW HERO SPLIT LAYOUT --- */
+.hero-split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 80vh; /* Reduced from 90vh */
+  padding: 100px 8% 40px; /* Added bottom padding, adjusted top */
+  background: var(--bg-paper);
+  gap: 40px;
+}
+
+.hero-left {
+  flex: 1;
+  text-align: left;
+}
+
+.hero-subtitle {
+  color: var(--gold);
+  letter-spacing: 4px;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.hero-left h2 {
+  font-size: 4rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: var(--text-main);
+}
+
+.hero-left .highlight {
+  color: var(--gold);
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 500px;
+  margin-bottom: 30px;
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image-container {
+  width: 100%;
+  max-width: 500px;
+  height: 600px;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 20px 20px 60px rgba(0,0,0,0.05);
+  border: 8px solid white;
+  transform: rotate(2deg); /* Adds a creative "hand-placed" feel */
+}
+
+.featured-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.hero-image-container:hover .featured-hero-img {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+/* RESPONSIVENESS */
+/* @media (max-width: 992px) {
+  .hero-split {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding-top: 120px;
+  }
+  .hero-left {
+    text-align: center;
+  }
+  .hero-left h2 {
+    font-size: 2.8rem;
+  }
+  .hero-description {
+    margin: 0 auto 30px;
+  }
+  .hero-image-container {
+    height: 400px;
+    transform: rotate(0deg);
+  }
+} */
+@media (max-width: 992px) {
+  .hero-split {
+    flex-direction: column; /* Changed from column-reverse to keep text first */
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 20px;
+    min-height: auto; /* Allow height to shrink to content */
+  }
+  
+  .hero-images-grid.featured-layout {
+    margin-top: 20px; /* Bring images closer to text */
+    margin-bottom: 0;
+  }
+
+  .hero-left {
+    text-align: center;
+    margin-bottom: 0; /* Remove bottom margin */
+  }
+}
+
+/* Container for the 3 images */
+.hero-images-grid {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
+}
+
+/* The individual "Canvas" style */
+.hero-image-card {
+  width: 200px; /* Adjust size as needed */
+  height: 300px;
+  background: white;
+  padding: 8px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.4s ease, z-index 0s;
+}
+
+.hero-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Staggered positioning for a creative look */
+.card-1 { transform: rotate(-5deg) translateY(20px); }
+.card-2 { transform: rotate(2deg) translateY(-20px); z-index: 2; }
+.card-3 { transform: rotate(-3deg) translateY(10px); }
+
+/* Hover effect to bring a card to focus */
+.hero-image-card:hover {
+  transform: rotate(0deg) scale(1.1) translateY(-10px);
+  z-index: 10;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+/* Mobile Responsive: Stack them slightly or shrink */
+@media (max-width: 768px) {
+  .hero-images-grid {
+    gap: 10px;
+  }
+  .hero-image-card {
+    width: 120px;
+    height: 180px;
+  }
+}
+
+/* --- NEW FEATURED HERO IMAGES GRID --- */
+.hero-images-grid.featured-layout {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 30px; /* Reduced from 50px */
+}
+/* Base style for all cards */
+.hero-image-card {
+  background: white;
+  padding: 6px; /* Reduced padding for cleaner look */
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.4s ease, z-index 0.1s;
+  cursor: pointer;
+}
+
+.hero-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px; /* Matches card rounding */
+}
+
+/* SIDE CARDS (Smaller) */
+.card-side-left, .card-side-right {
+  width: 170px; /* Smaller width for side pieces */
+  height: 250px;
+}
+
+/* CENTER FEATURED CARD (Larger & Prominent) */
+.card-featured-center {
+  width: 250px; /* Larger focus width */
+  height: 380px; /* Taller focus height */
+  margin: 0 -20px; /* Subtle negative margin to overlap sides */
+  z-index: 5; /* Puts center card "on top" */
+}
+
+/* STAGGERED POSITIONING AND ROTATIONS */
+.card-side-left { transform: rotate(-6deg) translateY(20px); }
+.card-featured-center { transform: rotate(1deg) translateY(-15px); }
+.card-side-right { transform: rotate(4deg) translateY(10px); }
+
+/* Hover effects */
+.hero-image-card:hover {
+  transform: rotate(0deg) scale(1.05) translateY(-20px);
+  z-index: 10; /* Brings any hovered card to the very front */
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* MOBILE RESPONSIVE ADAPTATIONS */
+@media (max-width: 768px) {
+  .hero-images-grid.featured-layout {
+    gap: 8px;
+    padding-top: 20px; /* Reduced from 40px */
+    margin-bottom: 0;
+  }
+  
+  .card-side-left, .card-side-right {
+    width: 100px;
+    height: 150px;
+  }
+  
+  .card-featured-center {
+    width: 160px;
+    height: 240px;
+    margin: 0 -10px; /* Reduced mobile overlap */
+  }
+  .hero-right {
+    padding-bottom: 0;
+    margin-bottom: -20px; /* Pulls the next section up slightly */
+  }
+  
+  /* Less aggressive rotations on small screens */
+  .card-side-left { transform: rotate(-4deg) translateY(10px); }
+  .card-featured-center { transform: rotate(1deg) translateY(-8px); }
+  .card-side-right { transform: rotate(3deg) translateY(5px); }
+}
+
+/* --- ABOUT & SERVICES SPLIT LAYOUT --- */
+.about-services-split {
+  padding: 80px 8%;
+  background: var(--bg-paper);
+}
+
+.split-container {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+/* Sidebar Profile Card */
+.profile-sidebar {
+  flex: 0 0 320px; /* Fixed width for the profile card */
+}
+
+.profile-card {
+  background: var(--card-light);
+  padding: 40px 30px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+  border: 1px solid rgba(196, 154, 108, 0.1);
+}
+
+.profile-image-wrapper {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  padding: 5px;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); /* Insta Gradient */
+}
+
+.profile-dp {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid white;
+}
+
+/* Services Grid Adjustments */
+.services-content {
+  flex: 1;
+}
+
+.section-title.left-align {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.section-title.left-align::after {
+  margin: 15px 0; /* Align gold line to the left */
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Responsive Mobile Adjustments */
+@media (max-width: 1024px) {
+  .split-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-sidebar {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .section-title.left-align {
+    text-align: center;
+  }
+
+  .section-title.left-align::after {
+    margin: 15px auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+}
